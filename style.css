@@ -15,3 +15,44 @@
 @media(max-width:680px){html{scroll-padding-top:72px}.topbar{height:70px;padding:0 16px;gap:8px}.brand{font-size:.9rem;gap:7px}.brand-mark{width:31px;height:31px}.main-nav{position:absolute;top:69px;left:0;right:0;justify-content:center;gap:clamp(13px,4vw,25px);padding:8px 10px;background:#fff9f7ed;border-bottom:1px solid #efdfeb;backdrop-filter:blur(15px)}.main-nav a{font-size:.68rem}.audio-controls{gap:6px}.icon-button{width:35px;height:35px}.volume-control input{width:43px}.volume-control>span{display:none}.hero{display:flex;flex-direction:column;align-items:stretch;min-height:auto;padding:110px 24px 78px;gap:0}.hero-copy{order:1}.hero .eyebrow{font-size:.61rem;letter-spacing:.13em}.hero h2{font-size:clamp(3.8rem,16vw,6rem);margin-bottom:20px}.hero-arabic{font-size:1.2rem}.hero-description{font-size:.86rem}.hero-actions{gap:15px}.hero-actions .button{padding:13px 17px;font-size:.8rem}.hero-art{order:0;min-height:310px;margin:-25px 0 5px;transform:scale(.82);transform-origin:center}.cake-scene{scale:.9}.art-halo{width:300px}.orbit{width:340px}.orbit-two{width:370px}.scroll-cue{bottom:23px}.section-pad{padding:75px 22px}.letter-section{padding-top:80px}.section-heading{margin-bottom:35px}.section-heading h2{font-size:2rem}.letter-card{padding:40px 24px;border-radius:8px 25px}.letter-card::before{inset:8px}.letter-decor-top{top:17px;left:18px}.letter-decor-bottom{bottom:15px;right:18px}.letter-body{font-size:.96rem;line-height:2.2}.gift-grid{grid-template-columns:1fr;max-width:390px}.gift-card{min-height:275px}.gift-illustration{height:100px;margin:7px 0 13px}.gift-box{scale:.82;margin-top:24px;margin-bottom:28px}.envelope{scale:.85}.wish-panel{grid-template-columns:1fr;padding:35px 23px;gap:20px}.wish-copy{text-align:center}.wish-copy h2{font-size:2.5rem}.wish-copy>p:not(.eyebrow):not(.wish-result){margin-left:auto;margin-right:auto}.wish-cake-wrap{min-height:250px;transform:scale(.9)}.memory-grid{grid-template-columns:1fr;max-width:380px;gap:18px}.memory-card{min-height:310px}.memory-card:nth-child(n){transform:none}.closing-section{padding-top:75px;padding-bottom:75px}.closing-content h2{font-size:2.6rem}.footer{flex-direction:column;align-items:center;text-align:center}.modal-panel{padding:38px 22px 25px}.modal-panel h2{font-size:1.5rem}.back-to-top{right:14px;bottom:15px;width:40px;height:40px}.ticker-track{font-size:.65rem;gap:35px}}
 @media(max-width:380px){.brand>span:last-child{display:none}.main-nav{gap:12px}.main-nav a{font-size:.64rem}.volume-control input{width:35px}.hero{padding-left:18px;padding-right:18px}.hero h2{font-size:3.55rem}.hero-art{margin-left:-20px;margin-right:-20px}.hero-actions{align-items:flex-start;flex-direction:column}.section-pad{padding-left:17px;padding-right:17px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}.ticker-track{animation:none}}
+/* Keep the page layout stable */
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  overflow-x: clip;
+}
+
+/* Stop continuous decorative motion */
+.ambient .orb,
+.sky-star,
+.intro-screen::before,
+.intro-screen::after,
+.intro-name,
+.name-spark,
+.intro-bottom-sparkles,
+.orbit,
+.float-heart,
+.float-star,
+.cake-scene,
+.cake-emoji,
+.candle,
+.flame,
+.scroll-cue span::after,
+.ticker-track,
+.gift-box,
+.envelope,
+.wish-star,
+.wish-cake,
+.wish-flame,
+.wish-sparkle,
+.closing-heart,
+.music-button.is-playing .music-bars i {
+  animation: none !important;
+}
+
+/* Preserve reveal behavior */
+.reveal {
+  transition: opacity 0.5s ease !important;
+}
